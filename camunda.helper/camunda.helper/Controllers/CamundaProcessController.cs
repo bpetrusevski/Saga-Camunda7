@@ -27,7 +27,8 @@ namespace camunda.helper.Controllers
 
                 //Creating process parameters
                 StartProcessInstance processParams;
-                if (myBPMNProcess.Equals(MyBPMNProcess.Process_Transaction_Saga_Orchestrator))
+                if (myBPMNProcess.Equals(MyBPMNProcess.Process_Transaction_Saga_Orchestrator) 
+                    || myBPMNProcess.Equals(MyBPMNProcess.Process_Transaction_Saga_Orchestrator_With_Compensate_Events))
                 {
                     OrderPostModel orderPostModel = new OrderPostModel
                     {
@@ -130,6 +131,7 @@ namespace camunda.helper.Controllers
     {
         Process_Prepare_Tea,
         Process_Check_Items_Availability,
-        Process_Transaction_Saga_Orchestrator
+        Process_Transaction_Saga_Orchestrator,
+        Process_Transaction_Saga_Orchestrator_With_Compensate_Events
     }
 }
