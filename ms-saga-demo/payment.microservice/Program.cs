@@ -49,7 +49,8 @@ app.MapPost("/Payment", async (PaymentDTO paymentDetail, PaymentDb db) =>
     db.Payments.Add(payment);
     await db.SaveChangesAsync();
 
-    Thread.Sleep(2000);
+    Thread.Sleep(8000);
+
 
     app.Logger.LogInformation($"POST Add Payment {payment.Id}");
 
@@ -69,7 +70,8 @@ app.MapDelete("/Payment/{orderId}", async (Guid orderId, PaymentDb db) =>
     payment.PaymentStatus = "Reversed";
     await db.SaveChangesAsync();
 
-    Thread.Sleep(2000);
+    Thread.Sleep(8000);
+
 
     app.Logger.LogInformation($"DELETE Payment {payment.Id}");
 
